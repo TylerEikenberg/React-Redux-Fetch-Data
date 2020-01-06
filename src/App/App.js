@@ -10,17 +10,26 @@ import "./App.css";
  */
 
 function App() {
+  const onSubmitHandle = () => {
+    // send data dispatch fetch action
+    return;
+  };
+  const onChangeHandle = () => {
+    // handle input change
+    return;
+  };
   return (
     <div className="App">
       <header className="App-header">
         <h1>Fetching Data</h1>
 
-        <form className="App-form" onSubmit>
+        <form className="App-form" onSubmit={onSubmitHandle}>
           <label>Search GitHub Users</label>
           <input
             className="App-input-text"
             type="text"
             placeholder="User Name"
+            onChange={onChangeHandle}
           />
           <input className="App-button" type="submit" placeholder="Search" />
         </form>
