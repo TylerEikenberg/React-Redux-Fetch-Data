@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as userActions from "../Redux/Actions/userActions";
 
@@ -13,15 +13,16 @@ import "./App.css";
 
 function App() {
   const [username, setUsername] = useState("Username");
+  const [userData, setUserData] = useState(null);
   const dispatch = useDispatch();
-  // const { userData } = useSelector(state => ({
-  //   data: state.userReducer.userData
-  // }));
+  const fetchedData = useSelector(state => ({
+    data: state.userData
+  }));
 
   const onSubmitHandle = e => {
     e.preventDefault();
     dispatch(userActions.fetchUserDataAsync(username));
-    console.log(username);
+
     return;
   };
   const onChangeHandle = e => {
@@ -29,6 +30,9 @@ function App() {
     setUsername(e.target.value);
     return;
   };
+
+  useEffect(() => {}, [userData]);
+
   return (
     <div className="App">
       <header className="App-header">
