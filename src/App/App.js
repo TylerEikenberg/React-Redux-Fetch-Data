@@ -44,9 +44,14 @@ function App() {
         </form>
 
         <div className="App-user-info-box">
-          <h2>
-            {fetchedData.data.login ? fetchedData.data.login : "Search a user!"}
-          </h2>
+          {fetchedData.data.login ? (
+            <a className="App-link" href={fetchedData.data.html_url}>
+              <h2>{fetchedData.data.login}</h2>
+            </a>
+          ) : (
+            <h2>Search a user!</h2>
+          )}
+
           <h3>{fetchedDataError.error ? "User does not exist" : null}</h3>
           <img
             className="App-user-pic"
