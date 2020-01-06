@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./App.css";
 
@@ -10,12 +10,16 @@ import "./App.css";
  */
 
 function App() {
-  const onSubmitHandle = () => {
+  const [username, setUsername] = useState("Username");
+
+  const onSubmitHandle = e => {
+    e.preventDefault();
     // send data dispatch fetch action
     return;
   };
-  const onChangeHandle = () => {
-    // handle input change
+  const onChangeHandle = e => {
+    e.preventDefault();
+    setUsername(e.target.value);
     return;
   };
   return (
@@ -35,7 +39,8 @@ function App() {
         </form>
 
         <div className="App-user-info-box">
-          <h2>User Info Goes Here</h2>
+          <h2>{username}</h2>
+          <h3>User data goes here</h3>
         </div>
       </header>
     </div>
