@@ -10,6 +10,9 @@ function App() {
   const fetchedData = useSelector(state => ({
     data: state.userData
   }));
+  const fetchedDataError = useSelector(state => ({
+    error: state.error
+  }));
 
   const onSubmitHandle = e => {
     e.preventDefault();
@@ -43,10 +46,8 @@ function App() {
         <div className="App-user-info-box">
           <h2>
             {fetchedData.data.login ? fetchedData.data.login : "Search a user!"}
-            {fetchedData.data.login && fetchedData.data.login === ""
-              ? "User does not exist"
-              : "Search a user!"}
           </h2>
+          <h3>{fetchedDataError.error ? "User does not exist" : null}</h3>
           <img
             className="App-user-pic"
             src={fetchedData.data.avatar_url}
