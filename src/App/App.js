@@ -4,13 +4,6 @@ import * as userActions from "../Redux/Actions/userActions";
 
 import "./App.css";
 
-/**
- * Use github api
- * Have form to type username
- * use username value to fetch to github api to fetch user data
- * display data
- */
-
 function App() {
   const [username, setUsername] = useState("Username");
   const dispatch = useDispatch();
