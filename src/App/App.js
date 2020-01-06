@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import * as userActions from "../Redux/Actions/userActions";
 
 import "./App.css";
 
@@ -11,10 +13,15 @@ import "./App.css";
 
 function App() {
   const [username, setUsername] = useState("Username");
+  const dispatch = useDispatch();
+  // const { userData } = useSelector(state => ({
+  //   data: state.userReducer.userData
+  // }));
 
   const onSubmitHandle = e => {
     e.preventDefault();
-    // send data dispatch fetch action
+    dispatch(userActions.fetchUserDataAsync(username));
+    console.log(username);
     return;
   };
   const onChangeHandle = e => {
