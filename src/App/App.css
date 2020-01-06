@@ -33,12 +33,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid yellow;
+  border: 2px solid gray;
   padding: 10px;
+}
+.App-form-label {
+  margin-bottom: 1vh;
 }
 .App-input-text {
   font-size: 1em;
   width: 50vw;
+  margin-bottom: 1vh;
 }
 .App-button {
   width: 50vw;
@@ -48,10 +52,14 @@
 
 .App-user-info-box {
   margin-top: 10vh;
-  width: 50vw;
-  border: 2px solid yellow;
+  min-width: 50vw;
+  border: 2px solid gray;
 }
 .App-user-pic {
   width: 45vw;
-  border: 2px solid gray;
+  min-width: 45vw;
+  min-height: 25vh;
+
+  margin-bottom: 1vh;
+  background-color: #131518;
 }

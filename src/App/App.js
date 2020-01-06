@@ -27,10 +27,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Fetching Data</h1>
+        <h2>GitHub User Search</h2>
 
         <form className="App-form" onSubmit={onSubmitHandle}>
-          <label>Search GitHub Users</label>
+          <label className="App-form-label">Search GitHub Users</label>
           <input
             className="App-input-text"
             type="text"
@@ -41,7 +41,9 @@ function App() {
         </form>
 
         <div className="App-user-info-box">
-          <h2>{fetchedData.data.login}</h2>
+          <h2>
+            {fetchedData.data.login ? fetchedData.data.login : "Search a user!"}
+          </h2>
           <img
             className="App-user-pic"
             src={fetchedData.data.avatar_url}
