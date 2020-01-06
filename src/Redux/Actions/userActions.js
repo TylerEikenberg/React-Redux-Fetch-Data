@@ -13,15 +13,15 @@ export const fetchUserDataFailure = error => {
 
 export const fetchUserDataAsync = username => {
   return dispatch => {
-    try {
-      return axios
-
-        .get(`https://api.github.com/users/${username}`)
-        .then(({ data }) => {
-          dispatch(fetchUserDataSuccess(data));
-        });
-    } catch (err) {
-      dispatch(fetchUserDataFailure(err.data.message));
-    }
+    return axios
+      .get(`https://api.github.com/users/${username}`)
+      .then(({ data }) => {
+        dispatch(fetchUserDataSuccess(data));
+      })
+      .catch(error => {
+        if (error.response) {
+          dispatch(fetchUserDataFailure(error.response.data));
+        }
+      });
   };
 };
