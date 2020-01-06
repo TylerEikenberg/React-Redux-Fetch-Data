@@ -63,3 +63,23 @@
   margin-bottom: 1vh;
   background-color: #131518;
 }
+
+@media only screen and (min-width: 770px) {
+  .App-header {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .App-input-text {
+    width: 20vw;
+  }
+  .App-button {
+    width: 20vw;
+  }
+  .App-user-info-box {
+    min-width: 30vw;
+  }
+  .App-user-pic {
+    width: 25vw;
+    min-width: 25vw;
+  }
+}
