@@ -43,6 +43,9 @@ function App() {
         <div className="App-user-info-box">
           <h2>
             {fetchedData.data.login ? fetchedData.data.login : "Search a user!"}
+            {fetchedData.data.login && fetchedData.data.login === ""
+              ? "User does not exist"
+              : "Search a user!"}
           </h2>
           <img
             className="App-user-pic"
