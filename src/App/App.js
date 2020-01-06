@@ -13,7 +13,6 @@ import "./App.css";
 
 function App() {
   const [username, setUsername] = useState("Username");
-  const [userData, setUserData] = useState(null);
   const dispatch = useDispatch();
   const fetchedData = useSelector(state => ({
     data: state.userData
@@ -22,7 +21,6 @@ function App() {
   const onSubmitHandle = e => {
     e.preventDefault();
     dispatch(userActions.fetchUserDataAsync(username));
-
     return;
   };
   const onChangeHandle = e => {
@@ -31,7 +29,7 @@ function App() {
     return;
   };
 
-  useEffect(() => {}, [userData]);
+  useEffect(() => {}, [fetchedData]);
 
   return (
     <div className="App">
@@ -50,8 +48,12 @@ function App() {
         </form>
 
         <div className="App-user-info-box">
-          <h2>{username}</h2>
-          <h3>User data goes here</h3>
+          <h2>{fetchedData.data.login}</h2>
+          <img
+            className="App-user-pic"
+            src={fetchedData.data.avatar_url}
+            alt=""
+          />
         </div>
       </header>
     </div>

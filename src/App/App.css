@@ -51,3 +51,7 @@
   width: 50vw;
   border: 2px solid yellow;
 }
+.App-user-pic {
+  width: 45vw;
+  border: 2px solid gray;
+}

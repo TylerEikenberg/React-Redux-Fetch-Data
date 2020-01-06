@@ -19,7 +19,6 @@ export const fetchUserDataAsync = username => {
         .get(`https://api.github.com/users/${username}`)
         .then(({ data }) => {
           dispatch(setUserData(data));
-          console.log("got data");
         });
     } catch (err) {
       if (err) {
